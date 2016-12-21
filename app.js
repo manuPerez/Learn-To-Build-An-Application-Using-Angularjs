@@ -14,6 +14,18 @@
 					full: 'dodecahedron-02-full.png',
 					thumb: 'dodecahedron-02-thumb.png'
 				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					body: "I love this product!",
+					author: "joe@thomas.com"
+				},
+				{
+					stars: 1,
+					body: "This product sucks",
+					author: "tim@hater.com"
+				}
 			]
 		},
 		{ 
@@ -29,6 +41,18 @@
 				{
 					full: 'dodecahedron-04-full.png',
 					thumb: 'dodecahedron-04-thumb.png'
+				}
+			],
+			reviews: [
+				{
+					stars: 3,
+					body: "Not bad",
+					author: "may@ray.com"
+				},
+				{
+					stars: 1,
+					body: "Really???",
+					author: "what@thehell.com"
 				}
 			]
 		}
@@ -51,5 +75,14 @@
 		}
 	});
 
+	app.controller('ReviewController', function(){
+		this.review = {};
+
+		this.addReview = function(product){
+			alert(this.review);
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+	});
 	
 })();
